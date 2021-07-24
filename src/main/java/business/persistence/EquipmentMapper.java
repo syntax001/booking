@@ -1,5 +1,5 @@
 package business.persistence;
-import business.entities.User;
+import business.entities.Equipment;
 import business.exceptions.UserException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,33 +8,32 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentMapper {
+public class EquipmentMapper {
 
     Database database;
 
-    public StudentMapper(Database database) {
+    public EquipmentMapper(Database database) {
         this.database = database;
     }
 
-    public List<User> getAllStudents() throws UserException {
-        List<User> studentList = new ArrayList<>();
+    public List<Equipment> getAllEquipment() throws UserException {
+        List<Equipment> equipmentList = new ArrayList<>();
 
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT * FROM users WHERE role='student'";
+            String sql = "SELECT * FROM equipment";
 
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
                 ResultSet rs = ps.executeQuery();
                 while (rs.next())
                 {
-                    int id = rs.getInt("id");
-                    String email = rs.getString("email");
-                    String password = rs.getString("password");
-                    String role = rs.getString("role");
-                    User user = new User(id, email, password, role);
-                    user.setId(id);
-                    studentList.add(user);
+                    String id = rs.getString("id");
+                    String item_name = rs.getString("email");
+                    String item_description = rs.getString("password");
+                    Equipment equipment = new Equipment(id, item_name, item_description);
+                    equipment.setId(id);
+                    equipmentList.add(equipment);
                 }
             }
             catch (SQLException ex)
@@ -47,7 +46,7 @@ public class StudentMapper {
             throw new UserException("Connection to database could not be established");
         }
 
-        return studentList;
+        return equipmentList;
     }
 
 }
