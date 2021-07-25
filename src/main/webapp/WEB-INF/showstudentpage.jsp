@@ -14,8 +14,8 @@
         Her er en liste med alle studerende:
         <table class="table table-striped">
         <tr>
-            <td>STUDENT ID:</td>
-            <td>STUDENT EMAIL:</td>
+            <td><b>STUDENT ID:</b></td>
+            <td><b>STUDENT EMAIL:</b></td>
         </tr>
             <c:forEach var="student" items="${requestScope.studentList}">
                 <tr>

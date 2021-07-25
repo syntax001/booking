@@ -11,8 +11,12 @@
     <jsp:body>
         <h1>Hello ${sessionScope.email} </h1>
         You are now logged in as a ADMIN of our wonderful site.
-
-        <a href="${pageContext.request.contextPath}/fc/showstudents">Vis Alle Studerende</a>
+        <br>
+        <a href="${pageContext.request.contextPath}/fc/showstudents">Show all Students</a>
+        <br>
+        <a href="${pageContext.request.contextPath}/fc/showequipment">Show all Equipment</a>
+        <br>
+        <a href="${pageContext.request.contextPath}/fc/addstudent">Register a new Student</a>
 
     </jsp:body>
 </t:genericpage>

@@ -14,9 +14,9 @@
         Heres a list of all bookable equipment:
         <table class="table table-striped">
         <tr>
-            <td>EQUIPMENT ID:</td>
-            <td>EQUIPMENT NAME:</td>
-            <td>EQUIPMENT DESCRIPTION:</td>
+            <td><b>EQUIPMENT ID:</b></td>
+            <td><b>EQUIPMENT NAME:</b></td>
+            <td><b>EQUIPMENT DESCRIPTION:</b></td>
         </tr>
             <c:forEach var="equipment" items="${requestScope.equipmentList}">
                 <tr>

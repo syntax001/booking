@@ -29,8 +29,8 @@ public class EquipmentMapper {
                 while (rs.next())
                 {
                     String id = rs.getString("id");
-                    String item_name = rs.getString("email");
-                    String item_description = rs.getString("password");
+                    String item_name = rs.getString("item_name");
+                    String item_description = rs.getString("item_description");
                     Equipment equipment = new Equipment(id, item_name, item_description);
                     equipment.setId(id);
                     equipmentList.add(equipment);

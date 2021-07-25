@@ -33,9 +33,9 @@
         <c:if test="${addHomeLink == null }">
             <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Home</a>
         </c:if>
-        <a class="p-2 text-dark" href="#">Orders</a>
+        <!--<a class="p-2 text-dark" href="#">Orders</a>
         <a class="p-2 text-dark" href="#">Profile</a>
-        <a class="p-2 text-dark" href="#">About</a>
+        <a class="p-2 text-dark" href="#">About</a>-->
     </nav>
 
     <div>
@@ -56,8 +56,8 @@
             <c:if test="${sessionScope.user == null }">
                 <a type="button" class="btn btn-sm  btn-outline-secondary"
                    href="${pageContext.request.contextPath}/fc/loginpage">Login</a>
-                <a type="button" class="btn btn-sm  btn-outline-secondary"
-                   href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>
+                <!--<a type="button" class="btn btn-sm  btn-outline-secondary"
+                   href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>-->
             </c:if>
     </div>
     </c:if>
