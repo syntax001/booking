@@ -4,24 +4,37 @@ public class User
 {
 
 
-    public User(int id, String email, String password, String role) {
+    public User(int id, String email, String password, String role, String name, int phoneNumber) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.role = role;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
     }
 
-    public User(String email, String password, String role)
+    public User(String email, String password, String name, int phoneNumber, String role)
     {
         this.email = email;
         this.password = password;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
         this.role = role;
+    }
+
+    public User(String email, String password, String role) {
+        this.email = email;
+        this.password = password;
+        this.role = role;
+
     }
 
     private int id; // just used to demo retrieval of autogen keys in UserMapper
     private String email;
     private String password; // Should be hashed and secured
     private String role;
+    private String name;
+    private int phoneNumber;
 
     public String getEmail()
     {
@@ -63,4 +76,19 @@ public class User
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }

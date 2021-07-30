@@ -11,10 +11,11 @@
 
     <jsp:body>
         <h1>Hello ${sessionScope.email} </h1>
-        You are now logged in as a Student of our wonderful site.
+        Booking successful!
         Role: ${sessionScope.role}
-        <br>
-        <a href="${pageContext.request.contextPath}/fc/book">Book Equipment</a>
+
+
+
     </jsp:body>
 
 </t:genericpage>

@@ -1,5 +1,6 @@
 package business.persistence;
 import business.entities.Equipment;
+import business.entities.Room;
 import business.exceptions.UserException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,11 +29,12 @@ public class EquipmentMapper {
                 ResultSet rs = ps.executeQuery();
                 while (rs.next())
                 {
-                    String id = rs.getString("id");
-                    String item_name = rs.getString("item_name");
-                    String item_description = rs.getString("item_description");
-                    Equipment equipment = new Equipment(id, item_name, item_description);
-                    equipment.setId(id);
+                    String itemId = rs.getString("item_id");
+                    String itemName = rs.getString("item_name");
+                    String itemDescription = rs.getString("item_description");
+                    int roomNumber = rs.getInt("room_number");
+                    Equipment equipment = new Equipment(itemId, itemName, itemDescription, roomNumber);
+                    equipment.setId(itemId);
                     equipmentList.add(equipment);
                 }
             }

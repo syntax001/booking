@@ -21,10 +21,9 @@
             <c:forEach var="equipment" items="${requestScope.equipmentList}">
                 <tr>
                     <td>${equipment.id}</td>
-                    <td>${equipment.item_name}</td>
-                    <td>${equipment.item_description}</td>
+                    <td>${equipment.itemName}</td>
+                    <td>${equipment.itemDescription}</td>
                 </tr>
-
             </c:forEach>
     </jsp:body>
 </t:genericpage>

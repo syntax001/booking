@@ -15,12 +15,16 @@
         <table class="table table-striped">
         <tr>
             <td><b>STUDENT ID:</b></td>
+            <td><b>STUDENT NAME:</b></td>
             <td><b>STUDENT EMAIL:</b></td>
+            <td><b>STUDENT PHONE:</b></td>
         </tr>
             <c:forEach var="student" items="${requestScope.studentList}">
                 <tr>
                     <td>${student.id}</td>
+                    <td>${student.name}</td>
                     <td>${student.email}</td>
+                    <td>${student.phoneNumber}</td>
                 </tr>
 
             </c:forEach>

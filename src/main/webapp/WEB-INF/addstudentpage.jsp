@@ -18,6 +18,18 @@
                     </div>
                 </div>
                 <div class="row mb-3">
+                    <label class="col-sm-1 col-form-label" for="name">Students name</label>
+                    <div class="col-sm-4">
+                        <input id="name" class="form-control" type="text" name="name" value="${param.name}" placeholder="Enter the Students name">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-1 col-form-label" for="phone">Students phone number</label>
+                    <div class="col-sm-4">
+                        <input id="phone" class="form-control" type="text" name="phone" value="${param.phone}" placeholder="Enter the Students Phone Number">
+                    </div>
+                </div>
+                <div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="password1">Students desired Password</label>
                     <div class="col-sm-4">
                         <input id="password1" class="form-control" type="password" name="password1"  value="${param.password1}"  placeholder="Enter students password">
