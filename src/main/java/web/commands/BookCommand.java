@@ -23,7 +23,7 @@ public class BookCommand extends CommandProtectedPage {
     {
         //HttpSession session = request.getSession();
         String bookingDate = request.getParameter("bookingDate");
-        String dayAmount = request.getParameter("dayAmount");
+        String bookingEnd = request.getParameter("bookingEnd");
         //session.setAttribute("bookingDate", bookingDate);
         //session.setAttribute("dayAmount", dayAmount);
 

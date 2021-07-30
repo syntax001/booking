@@ -7,24 +7,24 @@ public class Booking {
 
     private int id;
     private String bookingDate;
-    private int dayAmount;
+    private String bookingEnd;
     private String comment;
     private String bookingStatus;
     private String email;
     private String itemId;
 
-    public Booking(int id, String bookingDate, int dayAmount, String comment, String bookingStatus, String email, String itemId) {
+    public Booking(int id, String bookingDate, String bookingEnd, String comment, String bookingStatus, String email, String itemId) {
         this.id = id;
         this.bookingDate = bookingDate;
-        this.dayAmount = dayAmount;
+        this.bookingEnd = bookingEnd;
         this.comment = comment;
         this.bookingStatus = bookingStatus;
         this.email = email;
         this.itemId = itemId;
     }
-    public Booking(String bookingDate, int dayAmount, String comment, String bookingStatus, String email, String itemId) {
+    public Booking(String bookingDate, String bookingEnd, String comment, String bookingStatus, String email, String itemId) {
         this.bookingDate = bookingDate;
-        this.dayAmount = dayAmount;
+        this.bookingEnd = bookingEnd;
         this.comment = comment;
         this.bookingStatus = bookingStatus;
         this.email = email;
@@ -41,8 +41,8 @@ public class Booking {
         return bookingDate;
     }
 
-    public int getDayAmount() {
-        return dayAmount;
+    public String getBookingEnd() {
+        return bookingEnd;
     }
 
     public String getComment() {
@@ -72,8 +72,8 @@ public class Booking {
         this.bookingDate = bookingDate;
     }
 
-    public void setDayAmount(int dayAmount) {
-        this.dayAmount = dayAmount;
+    public void setBookingEnd(String bookingEnd) {
+        this.bookingEnd = bookingEnd;
     }
 
     public void setComment(String comment) {

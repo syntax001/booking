@@ -17,15 +17,15 @@ public class BookFacade {
         this.bookMapper = new BookMapper(database);
     }
 
-    public List<Equipment> getAllItems() throws UserException {
-        return bookMapper.getAllItems();
+    public List<Equipment> getAllItems(String startDate, String endDate) throws UserException {
+        return bookMapper.getAllItems(startDate, endDate);
     }
 
 
 
-    public Booking createBooking(String itemId, String email, String bookingDate, int dayAmount) throws UserException
+    public Booking createBooking(String itemId, String email, String bookingDate, String bookingEnd) throws UserException
     {
-        Booking booking = new Booking(bookingDate, dayAmount, "online booking", "booked", email, itemId);
+        Booking booking = new Booking(bookingDate, bookingEnd, "online booking", "booked", email, itemId);
         bookMapper.createBooking(booking);
         return booking;
     }

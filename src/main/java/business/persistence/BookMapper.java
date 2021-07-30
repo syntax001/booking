@@ -4,6 +4,7 @@ import business.entities.Booking;
 import business.entities.Equipment;
 import business.entities.User;
 import business.exceptions.UserException;
+import business.services.BookFacade;
 
 import java.awt.print.Book;
 import java.sql.*;
@@ -19,15 +20,16 @@ public class BookMapper {
     }
 
 
-    public List<Equipment> getAllItems() throws UserException {
+    public List<Equipment> getAllItems(String startDate, String endDate) throws UserException {
         List<Equipment> itemList = new ArrayList<>();
 
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT * FROM equipment";
+            String sql = "SELECT * FROM equipment WHERE equipment.item_id NOT IN (SELECT booking.item_id FROM booking WHERE booking_end_date <= ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
+                ps.setString(1, endDate);
                 ResultSet rs = ps.executeQuery();
                 while (rs.next())
                 {
@@ -57,12 +59,12 @@ public class BookMapper {
     {
         try (Connection connection = database.connect())
         {
-            String sql = "INSERT INTO booking (booking_date, day_amount, comment, booking_status, email, item_id) VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO booking (booking_date, booking_end_date, comment, booking_status, email, item_id) VALUES (?, ?, ?, ?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
             {
                 ps.setString(1, booking.getBookingDate());
-                ps.setInt(2, booking.getDayAmount());
+                ps.setString(2, booking.getBookingEnd());
                 ps.setString(3, booking.getComment());
                 ps.setString(4, booking.getBookingStatus());
                 ps.setString(5, booking.getEmail());

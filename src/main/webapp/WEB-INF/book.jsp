@@ -17,15 +17,15 @@
         <div style="margin-top: 5em;">
             <form name="date" action="${pageContext.request.contextPath}/fc/showbookableequipment" method="POST">
                 <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="bookingDate">Booking Date</label>
+                    <label class="col-sm-1 col-form-label" for="bookingDate">Start booking date</label>
                     <div class="col-sm-4">
-                        <input id="bookingDate" class="form-control" type="text" name="bookingDate" value="${param.bookingDate}" placeholder="Enter a Date">
+                        <input id="bookingDate" class="form-control" type="text" name="bookingDate" value="${param.bookingDate}" placeholder="Enter Start Date">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="dayAmount">How many days would you like to book</label>
+                    <label class="col-sm-1 col-form-label" for="bookingEnd">End booking date</label>
                     <div class="col-sm-4">
-                        <input id="dayAmount" class="form-control" type="text" name="dayAmount"  value="${param.dayAmount}"  placeholder="Enter an amount in days">
+                        <input id="bookingEnd" class="form-control" type="text" name="bookingEnd"  value="${param.bookingEnd}"  placeholder="Enter End Date">
                     </div>
                 </div>
                 <input class="btn btn-primary" type="submit" type="submit" value="Submit">

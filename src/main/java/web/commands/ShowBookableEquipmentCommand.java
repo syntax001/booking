@@ -25,8 +25,10 @@ public class ShowBookableEquipmentCommand extends CommandProtectedPage {
 
         //HttpSession session = request.getSession();
         String itemId = request.getParameter("bookedItem");
+        String bookingDate = request.getParameter("bookingDate");
+        String bookingEnd = request.getParameter("bookingEnd");
         //session.setAttribute("bookedItem", itemId);
-        request.setAttribute("itemList", bookFacade.getAllItems());
+        request.setAttribute("itemList", bookFacade.getAllItems(bookingDate, bookingEnd));
         return pageToShow;
     }
 }

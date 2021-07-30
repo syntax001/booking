@@ -29,8 +29,8 @@ public class BookingReceiptCommand extends CommandProtectedPage {
             String itemId = request.getParameter("bookedItem");
             String email = request.getParameter("email");
             String bookingDate = request.getParameter("bookingDate");
-            int dayAmount = Integer.parseInt(request.getParameter("dayAmount"));
-            bookFacade.createBooking(itemId, email, bookingDate, dayAmount);
+            String bookingEnd = request.getParameter("bookingEnd");
+            bookFacade.createBooking(itemId, email, bookingDate, bookingEnd);
         return pageToShow;
     }
 }

@@ -77,8 +77,8 @@ USE `booking`;
 DROP TABLE IF EXISTS `booking`;
 CREATE TABLE `booking` (
     `booking_id` int(11) NOT NULL AUTO_INCREMENT,
-    `booking_date` varchar(45) NOT NULL,
-    `day_amount` int(5) NOT NULL,
+    `booking_date` date NOT NULL,
+    `booking_end_date` date NOT NULL,
     `comment` varchar(45) NOT NULL,
     `booking_status` varchar(20) NOT NULL,
     `email` varchar(45) NOT NULL,
@@ -88,8 +88,8 @@ CREATE TABLE `booking` (
 
 LOCK TABLES `booking` WRITE;
 INSERT INTO `booking` VALUES
-(1,'24-07-2021',3,'test booking','booked','student@cph.dk','3d-1'),
-(2,'24-07-2021',3,'test booking','booked','forkert@cph.dk','camera-1');
+(1,'2021-07-30','2021-07-31','test booking','booked','student@cph.dk','3d-1'),
+(2,'2021-07-30','2021-08-14','test booking','booked','forkert@cph.dk','camera-1');
 UNLOCK TABLES;
 
 /*------------------------ SQL for room ------------------------*/
