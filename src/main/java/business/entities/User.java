@@ -4,13 +4,14 @@ public class User
 {
 
 
-    public User(int id, String email, String password, String role, String name, int phoneNumber) {
+    public User(int id, String email, String password, String role, String name, int phoneNumber, int points) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.role = role;
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.points = points;
     }
 
     public User(String email, String password, String name, int phoneNumber, String role)
@@ -35,6 +36,7 @@ public class User
     private String role;
     private String name;
     private int phoneNumber;
+    private int points;
 
     public String getEmail()
     {
@@ -90,5 +92,13 @@ public class User
 
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 }

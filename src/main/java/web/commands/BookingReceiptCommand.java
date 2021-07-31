@@ -3,6 +3,7 @@ package web.commands;
 import business.exceptions.UserException;
 import business.services.BookFacade;
 import business.services.EquipmentFacade;
+import business.services.UserFacade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ public class BookingReceiptCommand extends CommandProtectedPage {
 
     EquipmentFacade equipmentFacade;
     BookFacade bookFacade = new BookFacade(database);
+    UserFacade userFacade = new UserFacade(database);
 
     public BookingReceiptCommand(String pageToShow, String role) {
         super(pageToShow, role);
@@ -30,6 +32,7 @@ public class BookingReceiptCommand extends CommandProtectedPage {
             String email = request.getParameter("email");
             String bookingDate = request.getParameter("bookingDate");
             String bookingEnd = request.getParameter("bookingEnd");
+            userFacade.updateUserPoints(email);
             bookFacade.createBooking(itemId, email, bookingDate, bookingEnd);
         return pageToShow;
     }

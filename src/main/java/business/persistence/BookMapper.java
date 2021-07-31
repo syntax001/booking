@@ -25,11 +25,14 @@ public class BookMapper {
 
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT * FROM equipment WHERE equipment.item_id NOT IN (SELECT booking.item_id FROM booking WHERE booking_end_date <= ?)";
+            String sql = "SELECT * FROM equipment WHERE equipment.item_id NOT IN (SELECT booking.item_id FROM booking WHERE booking_date <= ? AND booking_end_date >= ? OR booking_date >= ? AND booking_end_date <= ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
-                ps.setString(1, endDate);
+                ps.setString(1, startDate);
+                ps.setString(2, endDate);
+                ps.setString(3, startDate);
+                ps.setString(4, endDate);
                 ResultSet rs = ps.executeQuery();
                 while (rs.next())
                 {

@@ -18,6 +18,7 @@
             <td><b>STUDENT NAME:</b></td>
             <td><b>STUDENT EMAIL:</b></td>
             <td><b>STUDENT PHONE:</b></td>
+            <td><b>STUDENT POINTS REMAINING:</b></td>
         </tr>
             <c:forEach var="student" items="${requestScope.studentList}">
                 <tr>
@@ -25,6 +26,7 @@
                     <td>${student.name}</td>
                     <td>${student.email}</td>
                     <td>${student.phoneNumber}</td>
+                    <td>${student.points}</td>
                 </tr>
 
             </c:forEach>

@@ -26,4 +26,8 @@ public class UserFacade
         return user;
     }
 
+    public String updateUserPoints(String email) throws UserException {
+        userMapper.updateUserPoints(email);
+        return email;
+    }
 }

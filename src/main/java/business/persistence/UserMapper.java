@@ -78,4 +78,49 @@ public class UserMapper
         }
     }
 
+    public String getUserPoints(String email) throws UserException {
+        try (Connection connection = database.connect())
+        {
+            String sql = "SELECT points FROM users WHERE email=?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                ps.setString(1, email);
+                ResultSet rs = ps.executeQuery();
+                rs.next();
+                int points = rs.getInt("points");
+                return String.valueOf(points);
+            }
+            catch (SQLException ex)
+            {
+                throw new UserException(ex.getMessage());
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new UserException("Connection to database could not be established");
+        }
+    }
+    public String updateUserPoints(String email) throws UserException {
+        try (Connection connection = database.connect())
+        {
+            String sql = "UPDATE users SET points =? WHERE email=?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                int points = Integer.parseInt(getUserPoints(email));
+                ps.setInt(1, 10);
+                ps.setString(2, email);
+                return "";
+            }
+            catch (SQLException ex)
+            {
+                throw new UserException(ex.getMessage());
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new UserException("Connection to database could not be established");
+        }
+    }
 }
