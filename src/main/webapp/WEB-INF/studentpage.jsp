@@ -10,11 +10,10 @@
     </jsp:attribute>
 
     <jsp:body>
-        <h1>Hello ${sessionScope.email} </h1>
-        You are now logged in as a Student of our wonderful site.
-        Role: ${sessionScope.role}
+        <bookingHeader1>Hello ${sessionScope.email} </bookingHeader1>
+        You are logged in as a Student.
         <br>
-        <a href="${pageContext.request.contextPath}/fc/book">Book Equipment</a>
+        <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/book"> <btn-text>Book Equipment</btn-text></a>
     </jsp:body>
 
 </t:genericpage>
