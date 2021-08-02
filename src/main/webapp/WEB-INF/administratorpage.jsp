@@ -4,19 +4,22 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Demo Page for Employee Roles
+         Administration Control Panel
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
     <jsp:body>
+        <div>
         <h1>Hello ${sessionScope.email} </h1>
-        You are now logged in as a ADMIN of our wonderful site.
-        <br>
-        <a href="${pageContext.request.contextPath}/fc/showstudents">Show all Students</a>
-        <br>
-        <a href="${pageContext.request.contextPath}/fc/showequipment">Show all Equipment</a>
-        <br>
-        <a href="${pageContext.request.contextPath}/fc/addstudent">Register a new Student</a>
-
+        Welcome to the Administrator Control Panel
+        <a style="margin-top: 1em;">
+            <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/showstudents"> <btn-text>Show All Students</btn-text></a>
+            <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/showequipment"> <btn-text>Show All Equipment</btn-text></a>
+        </a>
+        <a style="margin-top: 1em;">
+            <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/addstudent"> <btn-text>Register a Student</btn-text></a>
+            <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/showbookedequipment"> <btn-text>View Booked Equipment</btn-text></a>
+        </a>
+        </div>
     </jsp:body>
 </t:genericpage>

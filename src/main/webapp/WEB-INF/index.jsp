@@ -5,7 +5,7 @@
 <t:genericpage>
 
     <jsp:attribute name="header">
-         Home
+         CPH Business Equipment Booking
     </jsp:attribute>
 
     <jsp:attribute name="footer">
@@ -15,22 +15,24 @@
     <jsp:body>
 
         <div>
-            <h2>Our Cool Site</h2>
+            <h2>Welcome to CPH Business Equipment Booking!</h2>
 
             <div style="margin-top: 3em;margin-bottom: 3em;">
-                Main page for this 2. semester start project used at cphbusiness.dk
+                If you haven't already received a login from your Teacher, let them know so they can get you signed up.
             </div>
 
-            <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
+            <c:if test="${sessionScope.role == 'administrator' }">
+                <div style="margin-top: 1em;">
+                    You're logged in as an administrator!
+                    <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/administratorpage"> <btn-text>Go to Control Panel</btn-text></a>
+                </div>
              </c:if>
 
-             <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
+             <c:if test="${sessionScope.role == 'student' }">
+            <div style="margin-top: 1em;">
+                You're logged in as a student!
+                <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/studentpage"> <btn-text>Get started booking</btn-text></a>
+            </div>
             </c:if>
 
         </div>

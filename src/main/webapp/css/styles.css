@@ -9,16 +9,16 @@
 }
 
 
-bookingHeader1{
-    font-family: 'Signika', sans-serif;
-    font-size: 75px;
-    color: #000000;
+bookingheader1{
+    font-family: Dubai, serif;
+    font-size: 70px;
+    color: #003d76;
     margin-left: auto;
     margin-right: auto;
 }
 
-bookingParagraph1{
-    font-family: 'Inder', sans-serif;
+bookingtext1{
+    font-family: Inder, serif;
     font-size: 30px;
     color: #000000;
     margin-left: auto;
@@ -31,4 +31,14 @@ btn-text{
     color: white;
     margin-left: auto;
     margin-right: auto;
+}
+
+.adminbutton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 64px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
