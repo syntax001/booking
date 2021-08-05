@@ -36,5 +36,4 @@ public class AddStudentCommand extends CommandUnprotectedPage
             return "addstudentpage";
         }
     }
-
 }

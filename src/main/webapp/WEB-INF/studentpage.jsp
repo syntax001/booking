@@ -15,8 +15,12 @@
         <bookingText1>You are logged in as a Student.</bookingText1>
         <br>
         <div style="margin-top: 4em;">
-        <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/book"> <btn-text>Book Equipment</btn-text></a>
+            <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/book"> <btn-text>Book Equipment</btn-text></a>
         </div>
+        <br>
+        <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/remainingpoints"> <btn-text>Check Remaining Points</btn-text></a>
+
+
     </jsp:body>
 </t:genericpage>
 

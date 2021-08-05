@@ -12,13 +12,13 @@
         <div>
         <h1>Hello ${sessionScope.email} </h1>
         Welcome to the Administrator Control Panel
+            <br>
         <a style="margin-top: 1em;">
             <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/showstudents"> <btn-text>Show All Students</btn-text></a>
             <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/showequipment"> <btn-text>Show All Equipment</btn-text></a>
-        </a>
-        <a style="margin-top: 1em;">
+            <br>
             <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/addstudent"> <btn-text>Register a Student</btn-text></a>
-            <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/showbookedequipment"> <btn-text>View Booked Equipment</btn-text></a>
+            <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/showbookedequipment"> <btn-text>View/Manage Booked Equipment</btn-text></a>
         </a>
         </div>
     </jsp:body>

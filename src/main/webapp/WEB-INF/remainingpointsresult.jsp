@@ -4,25 +4,20 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Booking Successful!
+         Check Remaining Points
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
 
     <jsp:body>
-        <h1>${sessionScope.email}</h1>
-        <br>
-        <h1>Booking successfully placed!</h1>
-        You've booked ${param.bookedItem}!
-        <br>
-        You can pick up this item at <b>${param.bookingDate}</b> and you are expected to return it on <b>${param.bookingEnd}</b>!
+        <h1>${sessionScope.email} </h1>
+        You have: ${requestScope.remainingPoints} points remaining.
+
         <br>
         <div style="margin-top: 1em;">
             <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/studentpage"> <btn-text>Back to Landing Page</btn-text></a>
         </div>
 
-
     </jsp:body>
-
 </t:genericpage>
 

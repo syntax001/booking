@@ -36,6 +36,9 @@ public abstract class Command
         commands.put("showbookableequipment", new ShowBookableEquipmentCommand("showbookableequipment", "student"));
         commands.put("bookingreceipt", new BookingReceiptCommand("bookingreceipt", "student"));
         commands.put("showbookedequipment", new ShowBookedEquipmentCommand("showbookedequipment", "administrator"));
+        commands.put("bookingdeletedreceipt", new BookingDeletedReceiptCommand("bookingdeletedreceipt", "administrator"));
+        commands.put("remainingpoints", new ShowRemainingPointsCommand("remainingpoints", "student"));
+        commands.put("remainingpointsresult", new RemainingPointsResultCommand("remainingpointsresult", "student"));
     }
 
     public static Command fromPath(

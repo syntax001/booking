@@ -55,4 +55,26 @@ public class BookedEquipmentMapper {
         return bookingList;
     }
 
+
+    public void deleteBooking(String bookingId) throws UserException {
+        try (Connection connection = database.connect())
+        {
+            String sql = "DELETE FROM booking WHERE booking_id = ?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                ps.setString(1, bookingId);
+                //ResultSet rs = ps.executeQuery();
+                ps.executeUpdate();
+            }
+            catch (SQLException ex)
+            {
+                throw new UserException(ex.getMessage());
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new UserException("Connection to database could not be established");
+        }
+    }
 }

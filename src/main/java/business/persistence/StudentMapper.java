@@ -53,4 +53,30 @@ public class StudentMapper {
         return studentList;
     }
 
+    public int getRemainingUserPoints(String email) throws UserException {
+        int remainingPoints;
+        try (Connection connection = database.connect())
+        {
+            String sql = "SELECT points FROM users WHERE email = ?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+
+                ps.setString(1, email);
+                ResultSet rs = ps.executeQuery();
+                rs.next();
+                remainingPoints = rs.getInt("points");
+            }
+            catch (SQLException ex)
+            {
+                throw new UserException(ex.getMessage());
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new UserException("Connection to database could not be established");
+        }
+
+        return remainingPoints;
+    }
 }

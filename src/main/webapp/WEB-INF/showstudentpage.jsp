@@ -4,14 +4,18 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Demo Page for Customer Roles
+         Show All Registered Students
+        <br>
+        <div style="margin-top: 1em;">
+            <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/administratorpage"> <btn-text>Back to Admin Control Panel</btn-text></a>
+        </div>
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
 
     <jsp:body>
         <h1>Hello ${sessionScope.email} </h1>
-        Her er en liste med alle studerende:
+        Heres a list of all students:
         <table class="table table-striped">
         <tr>
             <td><b>STUDENT ID:</b></td>

@@ -15,15 +15,15 @@ CREATE TABLE `users` (
   `name` varchar(45) NOT NULL,
   `phone` int(8) NOT NULL,
   `role` varchar(20) NOT NULL DEFAULT 'student',
-  `points` int(4) DEFAULT '100',
+  `points` int(4) DEFAULT '20',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES 
-(1,'student@cph.dk','student','Kurt Verner','45454545','student','100'),
-(2,'admin@cph.dk','admin','Kurt Verner','45454545','administrator','100');
+(1,'student@cph.dk','student','Kurt Verner','45454545','student','20'),
+(2,'admin@cph.dk','admin','Kurt Verner','45454545','administrator','20');
 UNLOCK TABLES;
 
 

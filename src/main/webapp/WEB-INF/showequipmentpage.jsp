@@ -4,14 +4,18 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Demo Page for Customer Roles
+         Showing All Registered Equipment
+        <br>
+        <div style="margin-top: 1em;">
+            <a class = "btn btn-dark" href="${pageContext.request.contextPath}/fc/administratorpage"> <btn-text>Back to Admin Control Panel</btn-text></a>
+        </div>
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
 
     <jsp:body>
         <h1>Hello ${sessionScope.email} </h1>
-        Heres a list of all bookable equipment:
+        Heres a list of all equipment:
         <table class="table table-striped">
         <tr>
             <td><b>EQUIPMENT ID:</b></td>

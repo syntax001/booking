@@ -20,5 +20,9 @@ public class BookedEquipmentFacade {
     public List<Booking> getAllBookedEquipment() throws UserException {
         return beMapper.getAllBookedEquipment();
     }
+
+    public void deleteBooking(String bookingId) throws UserException {
+        beMapper.deleteBooking(bookingId);
+    }
 }
 

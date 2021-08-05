@@ -101,7 +101,7 @@ public class UserMapper
             throw new UserException("Connection to database could not be established");
         }
     }
-    public String updateUserPoints(String email) throws UserException {
+    public void updateUserPoints(String email) throws UserException {
         try (Connection connection = database.connect())
         {
             String sql = "UPDATE users SET points =? WHERE email=?";
@@ -109,9 +109,9 @@ public class UserMapper
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
                 int points = Integer.parseInt(getUserPoints(email));
-                ps.setInt(1, 10);
+                ps.setInt(1, points-1);
                 ps.setString(2, email);
-                return "";
+                ps.executeUpdate();
             }
             catch (SQLException ex)
             {

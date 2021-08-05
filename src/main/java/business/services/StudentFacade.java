@@ -18,5 +18,8 @@ public class StudentFacade {
         return studentMapper.getAllStudents();
     }
 
+    public int getRemainingUserPoints(String email) throws UserException {
+        return studentMapper.getRemainingUserPoints(email);
+    }
 
 }
